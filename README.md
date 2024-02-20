@@ -10,24 +10,33 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - action-exampls
   pull_request:
     branches:
-      - main
-
+      - action-exampls
 jobs:
-    #merge branch 
-    build:
-        run: echo "Merging branch"
+  echo:
+    runs-on: ubuntu-latest
 
-    #build and test
-    test:
-        run: echo "Building and testing code"
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    #deploy
-    deploy:
-        run: echo "Deploying code"
+    - name: Echo something
+      run: echo "Hello, GitHub Actions!"
 
+    - name: Echo something else
+      run: echo "Hello, GitHub Actions!"
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: echo "Building the project..."
 ```
 
 3. Push the file to your repository
