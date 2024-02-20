@@ -7,16 +7,13 @@ on:
   pull_request:
     branches:
       - action-exampls
-
 jobs:
-    #merge branch
-    build:
-        run: echo "Merging branch"
+  echo:
+    runs-on: ubuntu-latest
 
-    #build and test
-    test:
-        run: echo "Building and testing code"
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    #deploy
-    deploy:
-        run: echo "Deploying code"
+    - name: Echo something
+      run: echo "Hello, GitHub Actions!"
