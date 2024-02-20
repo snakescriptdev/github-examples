@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - action-exampls
+  pull_request:
+    branches:
+      - action-exampls
+
+jobs:
+    #merge branch
+    build:
+        run: echo "Merging branch"
+
+    #build and test
+    test:
+        run: echo "Building and testing code"
+
+    #deploy
+    deploy:
+        run: echo "Deploying code"
